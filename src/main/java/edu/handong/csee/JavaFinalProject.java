@@ -16,18 +16,17 @@ import org.apache.commons.compress.archivers.zip.ZipFile;
 
 public class JavaFinalProject {
 
-	String inputPath;
-	String outputPath;
-	static ArrayList<String> line1 = new ArrayList<String>();
-	static ArrayList<String> line2 = new ArrayList<String>();
-	File fileName;
-
+	private String inputPath;
+	private String output;
+	private static ArrayList<String> line1 = new ArrayList<String>();
+	private static ArrayList<String> line2 = new ArrayList<String>();
+	
 	public static void main(String[] args) {
 		JavaFinalProject javaFinal = new JavaFinalProject();
 		javaFinal.run(args);
 	}
 
-	private void run(String[] args) {
+	public void run(String[] args) {
 
 		Options options = createOptions();
 
@@ -53,14 +52,12 @@ public class JavaFinalProject {
 					e.printStackTrace();
 				}
 			}
-			Utils.writeAFile(line1, outputPath.substring(0, 6) + "1.csv");
-			Utils.writeAFile(line2, outputPath.substring(0, 6) + "2.csv");
+			Utils.writeAFile(line1, output.substring(0, 6) + "1.csv");
+			Utils.writeAFile(line2, output.substring(0, 6) + "2.csv");
 			Utils.writeAFile(ExcelReader.getErrorList(), "error.csv");
 		}
 
 	}
-
-
 
 	public void setHeadLine1(ArrayList<String> line) {
 		line.add("\"" + "학생 이름" + "\"" + "," + "\"" + "제목" + "\"" + "," + "\"" + "요약문 (300자 내외)" + "\"" + "," + "\""
@@ -130,7 +127,7 @@ public class JavaFinalProject {
 			CommandLine cmd = parser.parse(options, args);
 
 			inputPath = cmd.getOptionValue("i");
-			outputPath = cmd.getOptionValue("o");
+			output = cmd.getOptionValue("o");
 		} catch (Exception e) {
 			return false;
 		}
