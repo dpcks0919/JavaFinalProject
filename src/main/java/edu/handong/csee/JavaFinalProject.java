@@ -52,11 +52,13 @@ public class JavaFinalProject {
 					e.printStackTrace();
 				}
 			}
-			Utils.writeAFile(line1, output.substring(0, 6) + "1.csv");
-			Utils.writeAFile(line2, output.substring(0, 6) + "2.csv");
+			
+			System.out.println(output.lastIndexOf("."));
+			int a = output.lastIndexOf(".");
+			Utils.writeAFile(line1, output.substring(0, a) + "1.csv");
+			Utils.writeAFile(line2, output.substring(0, a) + "2.csv");
 			Utils.writeAFile(ExcelReader.getErrorList(), "error.csv");
 		}
-
 	}
 
 	public void setHeadLine1(ArrayList<String> line) {
@@ -80,7 +82,7 @@ public class JavaFinalProject {
 		return fileList;
 	}
 
-	public static void readFileInZip(File file) {
+	public void readFileInZip(File file) {
 		ZipFile zipFile;
 		ArrayList<String> temp1 = new ArrayList<String>();
 		ArrayList<String> temp2 = new ArrayList<String>();

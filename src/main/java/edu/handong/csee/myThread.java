@@ -13,7 +13,8 @@ public class myThread implements Runnable {
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		JavaFinalProject.readFileInZip(fileName);
+		JavaFinalProject myJava = new JavaFinalProject();
+		myJava.readFileInZip(fileName);
 	}
 
 }
