@@ -53,10 +53,9 @@ public class JavaFinalProject {
 				}
 			}
 			
-			System.out.println(output.lastIndexOf("."));
-			int a = output.lastIndexOf(".");
-			Utils.writeAFile(line1, output.substring(0, a) + "1.csv");
-			Utils.writeAFile(line2, output.substring(0, a) + "2.csv");
+			int name = output.lastIndexOf(".");
+			Utils.writeAFile(line1, output.substring(0, name) + "1.csv");
+			Utils.writeAFile(line2, output.substring(0, name) + "2.csv");
 			Utils.writeAFile(ExcelReader.getErrorList(), "error.csv");
 		}
 	}

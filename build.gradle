@@ -44,6 +44,6 @@ dependencies {
 
 }
 
-apply plugin: 'aplication'
+apply plugin: 'application'
 mainClassName = "edu.handong.csee.JavaFinalProject"
 
